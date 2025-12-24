@@ -1,7 +1,8 @@
+import Header from "@/components/Header";
 import ProductItem from "@/components/ProductItem";
 import { products } from "@/data/products";
 import React from "react";
-import { Image, ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 
 
 
@@ -11,41 +12,15 @@ const Index = () => {
   let productlist = products.map ((product) => (
     <ProductItem key={product.name} name={product.name} image={product.image} price={product.price}/>
 
-
+    
   ));
 
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "flex-start",
-        alignItems: "center",
-        backgroundColor: "#d6ccc2"
-      }}>  
-       <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 30}}>
-       
-       <Text style={{
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: 'black',
-        textAlign: 'center',
-        textTransform: 'uppercase',
-        marginTop: 20,
-       }}>cookies & beyond</Text>
+    <View style= {{backgroundColor: "#d6ccc2"}} >
 
-       <Text style={{
-        fontSize: 24,
-        fontWeight: 'normal',
-        color: '#343a40',
-        textAlign: 'center',
-        textTransform: 'none'
-       }}>sweeeeeeeeeeeeeeeeeet</Text>
-
-       <Image
-       source = {require('../assets/images/cookies-store.jpeg')}
-       style = {{width: 320, height:200, borderRadius: 55, marginTop: 20}}
-     
-       />
+<ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 30}}>
+   
+<Header/>
 
        {/* Product card = classic cookies */}
        <View style={{
@@ -56,12 +31,14 @@ const Index = () => {
         alignItems: 'center',
         width: 280,
        }}>
+
         <Text style={{
           margin: 5,
           fontSize: 18,
           fontWeight: 'bold',
           color: '#333',
         }}>Classic Cookies</Text>
+
        </View>
 
        {/* prodect Grid */}
