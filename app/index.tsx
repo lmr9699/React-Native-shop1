@@ -1,18 +1,15 @@
+import ProductItem from "@/components/ProductItem";
 import { products } from "@/data/products";
 import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 
 
 
+
 const Index = () => {
 
   let productlist = products.map ((product) => (
-    <View key={product.name}>
-      <Image source={product.image} style={{width: 140, height: 120, borderRadius: 10}} />
-      <Text>{product.name}</Text>
-      <Text>{product.price}KD</Text>
-      
-    </View>
+    <ProductItem key={product.name} name={product.name} image={product.image} price={product.price}/>
 
 
   ));
@@ -60,6 +57,7 @@ const Index = () => {
         width: 280,
        }}>
         <Text style={{
+          margin: 5,
           fontSize: 18,
           fontWeight: 'bold',
           color: '#333',
@@ -67,13 +65,16 @@ const Index = () => {
        </View>
 
        {/* prodect Grid */}
-       <View style={{
+       <View style = {{
+        flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
-        width: '90%',
-        marginTop: 20,
-       }}>{productlist}
+        margin: 40,
+        padding: 10,
+
+       }}>
+        {productlist}
        </View>
        
 
